@@ -1,7 +1,7 @@
 class DNI:
     def __init__(self, chain=""):
         self.dni = chain
-        self.healthy_number= False
+        self.healthy_number = False
         self.healthy_letter = False
         # ToDo: tabla de asignación.
 
@@ -12,10 +12,8 @@ class DNI:
         def set_dni(self, chain):
             self.dni = chain
 
-
         def set_healthy_number(self, value):
             self.healthy_number = value
-
 
         def set_healthy_letter(self, value):
             self.healthy_letter = value
@@ -24,14 +22,11 @@ class DNI:
         def get_dni(self):
             return self.dni
 
-
         def get_healthy_number(self):
             return self.healthy_number
 
-
         def get_healthy_letter(self):
             return self.healthy_letter
-
 
         # check methods (class variables are boolean)
         def check_dni(self):
