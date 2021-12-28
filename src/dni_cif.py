@@ -3,44 +3,28 @@ class DNI:
         self.dni = chain
         self.healthy_number = False
         self.healthy_letter = False
-        # ToDo: tabla de asignación.
 
-        # ToDo: investigar sobre interfaces en py.
+    # methods to modify object instance
+    def set_dni(self, chain):
+        self.dni = chain
 
-        # Interfaz publica porque lo puedes usar fuera de la clase, para crear el objeto?
-        # set methods
-        def set_dni(self, chain):
-            self.dni = chain
+    def get_dni(self):
+        return self.dni
 
-        def set_healthy_number(self, value):
-            self.healthy_number = value
+    def set_healthy_number(self, number):
+        self.healthy_number = number
 
-        def set_healthy_letter(self, value):
-            self.healthy_letter = value
+    def get_healthy_number(self):
+        return self.healthy_number
 
-        # get metheods
-        def get_dni(self):
-            return self.dni
+    def set_healthy_letter(self, letter):
+        self.healthy_letter = letter
 
-        def get_healthy_number(self):
-            return self.healthy_number
+    def get_healthy_letter(self):
+        return self.healthy_letter
 
-        def get_healthy_letter(self):
-            return self.healthy_letter
 
-        # check methods (class variables are boolean)
-        def check_dni(self):
-            if set_healthy_number(self.check_length() and self.check_last_int()):
-                return get_healthy_number()
+if __name__ == "__main__":
 
-        # private methods
-        def check_length(self):
-            if len(self.dni) == 9:
-                return True
-            return False
-
-        # tiene que ser digito o char?
-        def check_last_int(self):
-            if self.dni[:-1].isdigit():
-                return True
-            return False
+    objeto = DNI("12345766N")
+    print(objeto.dni)
