@@ -10,8 +10,12 @@ class DniClassTesting(unittest.TestCase):
     def test_check_dni(self):
         value = DNI("123456789")
         self.assertTrue(value.check_dni())
-        value2 = DNI("12345678")
+        value2 = DNI("123,e678")
         self.assertFalse(value2.check_dni())
+        value3 = DNI("12345678N")
+        self.assertTrue(value3.check_dni())
+        value4 = DNI("123")
+        self.assertFalse(value4.check_dni())
 
     def test_check_dni_length(self):
         value = DNI("123456789")
