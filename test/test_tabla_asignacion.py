@@ -10,7 +10,6 @@ class TablaAsignacionClassTesting(unittest.TestCase):
 
     def test_get_tabla_length(self):
         table = TablaAsignacion()
-        print("hola")
         self.assertEqual(table.get_tabla_len(), 23)
 
     def test_get_table_letter(self):
