@@ -1,6 +1,6 @@
 ## unit testing
 import unittest
-from src import TablaAsignacion, tabla_asignacion
+from src.tabla_asignacion import TablaAsignacion
 
 
 class TablaAsignacionClassTesting(unittest.TestCase):
