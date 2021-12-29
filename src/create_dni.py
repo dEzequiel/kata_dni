@@ -25,16 +25,25 @@ class DNI:
 
     # checkers methods
     def check_dni(self):
-        self.set_healthy_number(self.check_dni_length and self.check_last_char_is_int)
-        return self.get_healthy_number()
+        if self.check_dni_length() and self.check_last_char_is_digit():
+            return True
+        else:
+            return False
 
     def check_dni_length(self):
         if len(self.dni) == 9:
             return True
-        return False
+        else:
+            return False
 
-    # this method is for not passing a letter in the string
-    def check_last_char_is_int(self):
+    # ToDo longitud del dni input
+    # this method is for not passing a letter in middle of the string
+    def check_last_char_is_digit(self):
         if self.dni[:-1].isdigit():
             return True
-        return False
+        else:
+            return False
+
+
+if __name__ == "__main__":
+    pass
