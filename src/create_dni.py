@@ -2,27 +2,27 @@ from .tabla_asignacion import TablaAsignacion
 
 
 class DNI:
-    def __init__(self, chain=""):
-        self.dni = chain
+    def __init__(self, identity_numer=""):
+        self.dni = identity_numer
         self.healthy_number = False
         self.healthy_letter = False
         self.table = TablaAsignacion()
 
     # methods to modify object instance
-    def set_dni(self, chain):
+    def set_dni(self, identity_number):
         self.dni = chain
 
     def get_dni(self):
         return self.dni
 
-    def set_healthy_number(self, number):
-        self.healthy_number = number
+    def set_healthy_number(self, status):
+        self.healthy_number = status
 
     def get_healthy_number(self):
         return self.healthy_number
 
-    def set_healthy_letter(self, letter):
-        self.healthy_letter = letter
+    def set_healthy_letter(self, status):
+        self.healthy_letter = status
 
     def get_healthy_letter(self):
         return self.healthy_letter
