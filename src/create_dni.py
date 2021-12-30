@@ -4,8 +4,8 @@ from src.tabla_asignacion import TablaAsignacion
 class DNI:
     def __init__(self, chain=""):
         self.dni = chain
-        self.healthy_number = False
-        self.healthy_letter = False
+        self.healthy_number = True
+        self.healthy_letter = True
         self.table = TablaAsignacion()
 
     # methods to modify object instance
@@ -59,9 +59,13 @@ class DNI:
     def get_alphabet_dni(self):
         return self.dni[-1]
 
+    def get_numerical_dni(self):
+        return self.dni[:-1]
+
     def get_table_letter(self):
         if self.get_healthy_number():
-            return self.table.calcular_letra(self.dni[:-1])
+            print(self.table.calcular_letra(self.get_numerical_dni()))
+            return True
         else:
             return False
 
@@ -76,4 +80,7 @@ class DNI:
 
 
 if __name__ == "__main__":
-    pass
+    value = DNI("42375166N")
+    print(value.healthy_number)
+    # print(value.get_table_letter())
+    print(type(value.get_numerical_dni()))
