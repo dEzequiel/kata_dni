@@ -35,17 +35,10 @@ class DNI:
         return self.get_healthy_number()
 
     def check_dni_length(self):
-        # if len(self.dni) == 9:
-        #     return True
-        # else:
-        #     return False
         return len(self.dni) == 9
 
     def check_last_char_is_digit(self):
-        if self.dni[:-1].isdigit():
-            return True
-        else:
-            return False
+        return self.dni[:-1].isdigit()
 
     def check_letter(self):
         if self.get_healthy_number():
