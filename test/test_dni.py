@@ -57,6 +57,17 @@ class DniClassTesting(unittest.TestCase):
         self.assertTrue(value.check_valid_letter())
         self.assertFalse(value2.check_valid_letter())
 
+    def test_check_letter(self):
+        value = DNI("42375166N")
+        value.set_healthy_number(True)
+        self.assertTrue(value.check_letter())
+
+    def test_check_cif(self):
+        value = DNI("42375166N")
+        value.set_healthy_number(True)
+        value.set_healthy_letter(True)
+        self.assertTrue(value.check_cif())
+
 
 if __name__ == "__main__":
     unittest.main()

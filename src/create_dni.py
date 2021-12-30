@@ -1,11 +1,11 @@
-from src.tabla_asignacion import TablaAsignacion
+from .tabla_asignacion import TablaAsignacion
 
 
 class DNI:
     def __init__(self, chain=""):
         self.dni = chain
-        self.healthy_number = True
-        self.healthy_letter = True
+        self.healthy_number = False
+        self.healthy_letter = False
         self.table = TablaAsignacion()
 
     # methods to modify object instance
@@ -47,11 +47,10 @@ class DNI:
             return False
 
     def check_letter(self):
-        if self.set_healthy_letter(
-            self.get_alphabet_dni().isupper()
-            and not self.get_alphabet_dni().isdigit()
-            and self.check_valid_letter()
-        ):
+        if self.get_healthy_number():
+            self.set_healthy_letter(
+                self.get_alphabet_dni().isupper() and self.check_valid_letter()
+            )
             return self.get_healthy_letter()
         else:
             return False
@@ -64,8 +63,7 @@ class DNI:
 
     def get_table_letter(self):
         if self.get_healthy_number():
-            print(self.table.calcular_letra(self.get_numerical_dni()))
-            return True
+            return self.table.calcular_letra(self.get_numerical_dni())
         else:
             return False
 
@@ -76,7 +74,7 @@ class DNI:
             return False
 
     def check_cif(self):
-        pass
+        return self.check_dni() and self.check_letter()
 
 
 if __name__ == "__main__":
