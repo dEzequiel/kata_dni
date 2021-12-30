@@ -26,7 +26,7 @@ class TablaAsignacion:
             "K",
             "E",
         ]
-        self.table = dict(zip(self.letters, self.positions))
+        self.table = dict(zip(self.positions, self.letters))
 
     def get_tabla_len(self):
         return len(self.table)
@@ -42,7 +42,7 @@ class TablaAsignacion:
         return self.get_tabla_letter(position)
 
     def show_tabla(self):
-        print(self.D)
+        print(self.table)
 
 
 if __name__ == "__main__":
