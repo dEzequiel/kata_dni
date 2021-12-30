@@ -62,10 +62,10 @@ class DNI:
             return False
 
     def check_valid_letter(self):
-        if self.get_healthy_number:
-            return self.get_alphabet_dni() == self.get_table_letter()
-        else:
-            return False
+        return (
+            self.get_healthy_number()
+            and self.get_alphabet_dni() == self.get_table_letter()
+        )
 
     def check_cif(self):
         return self.check_dni() and self.check_letter()
