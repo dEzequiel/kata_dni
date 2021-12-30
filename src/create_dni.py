@@ -1,4 +1,4 @@
-from .tabla_asignacion import TablaAsignacion
+from tabla_asignacion import TablaAsignacion
 
 
 class DNI:
@@ -10,7 +10,7 @@ class DNI:
 
     # methods to modify object instance
     def set_dni(self, identity_number):
-        self.dni = chain
+        self.dni = identity_number
 
     def get_dni(self):
         return self.dni
@@ -43,11 +43,13 @@ class DNI:
     def check_letter(self):
         if self.get_healthy_number():
             self.set_healthy_letter(
-                self.get_alphabet_dni().isupper() and self.check_valid_letter()
+                self.get_alphabet_dni().isupper()
+                and not self.get_alphabet_dni().isdigit()
+                and self.check_valid_letter()
             )
             return self.get_healthy_letter()
         else:
-            return False
+            return False  # return get_tabble_letter
 
     def get_alphabet_dni(self):
         return self.dni[-1]
@@ -72,7 +74,15 @@ class DNI:
 
 
 if __name__ == "__main__":
-    value = DNI("42375166N")
-    print(value.healthy_number)
-    # print(value.get_table_letter())
-    print(type(value.get_numerical_dni()))
+
+    # person = DNI("42375166N")
+    # print("DNI -->", person.get_dni())
+    # person.check_dni()
+    # print("Check status --> ", person.get_healthy_number())
+    # print("Letter status --> ", person.check_letter())
+
+    person2 = DNI("42375188B")  # B
+    print("DNI -->", person2.get_dni())
+    print("DNI NUMBER status -->", person2.check_dni())
+    print("DNI LETTER status --> ", person2.check_letter())
+    print("CIF STATUS -->", person2.check_cif())
