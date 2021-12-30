@@ -45,9 +45,17 @@ class DniClassTesting(unittest.TestCase):
 
     def test_calculate_letter(self):
         value = DNI("42375166N")
+        value.set_healthy_number(True)
         self.assertTrue(value.get_table_letter())
-        value2 = DNI("78484464N")
-        self.assertFalse(value2.get_table_letter())
+        self.assertEqual(value.get_table_letter(), "N")
+        self.assertNotEqual(value.get_table_letter(), "O")
+
+    def test_check_valid_letter(self):
+        value = DNI("42375166N")
+        value2 = DNI("42375166O")
+        value.set_healthy_number(True)
+        self.assertTrue(value.check_valid_letter())
+        self.assertFalse(value2.check_valid_letter())
 
 
 if __name__ == "__main__":
