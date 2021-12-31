@@ -1,3 +1,5 @@
+from random import choice, randint, randrange
+from string import ascii_uppercase
 from tabla_asignacion import TablaAsignacion
 
 
@@ -75,14 +77,45 @@ class DNI:
 
 if __name__ == "__main__":
 
+    import math
+    import random
+    import string
+
     # person = DNI("42375166N")
     # print("DNI -->", person.get_dni())
     # person.check_dni()
     # print("Check status --> ", person.get_healthy_number())
-    # print("Letter status --> ", person.check_letter())
+    # # print("Letter status --> ", person.check_letter())
+    # person2 = DNI("42375188B")  # B
+    # print("DNI -->", person2.get_dni())
+    # print("DNI NUMBER status -->", person2.check_dni())
+    # print("DNI LETTER status --> ", person2.check_letter())
+    # print("CIF STATUS -->", person2.check_cif())
 
-    person2 = DNI("42375188B")  # B
-    print("DNI -->", person2.get_dni())
-    print("DNI NUMBER status -->", person2.check_dni())
-    print("DNI LETTER status --> ", person2.check_letter())
-    print("CIF STATUS -->", person2.check_cif())
+casosTest = []
+numeroCasos = 25
+
+for i in range(1, numeroCasos + 1):
+    caso = ""
+    for j in range(1, 9):
+        # random.randrange(start, stop[, step])
+        # numeroAleatorio = random.randint(0, 9)
+        # ASCII 48-57 = 0-9    65-90 = A-Z   58 = ":"
+        # generamos un numero aleatorio entre 48 y 58
+        caracterAscii = random.randrange(48, 58 + 1, 1)
+        # convertimos el numero ASCII a caracter. chr() toma el argumento como codigo ASCII de un caracter
+        caso = caso + chr(caracterAscii)
+    # en la ultima posicion añado una letra A-Z
+    caso = caso + chr(random.randrange(65, 90 + 1, 1))
+    casosTest = casosTest + [caso]
+
+print(casosTest)
+
+for dni in casosTest:
+    objeto = DNI(dni)
+    print(objeto.get_dni())
+    objeto.check_cif()
+    print("dni --->", objeto.get_healthy_number())
+    # print(objeto.calcularLetra())
+    print("Letra --->", objeto.get_healthy_letter())
+    print("La letra es", objeto.get_table_letter())
