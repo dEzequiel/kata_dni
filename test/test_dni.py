@@ -49,6 +49,10 @@ class DniClassTesting(unittest.TestCase):
         self.assertTrue(value.get_table_letter())
         self.assertEqual(value.get_table_letter(), "N")
         self.assertNotEqual(value.get_table_letter(), "O")
+        value2 = DNI("42375188N")
+        value2.set_healthy_number(True)
+        self.assertTrue(value2.get_table_letter())
+        self.assertEqual(value2.get_table_letter(), "B")
 
     def test_check_valid_letter(self):
         value = DNI("42375166N")
