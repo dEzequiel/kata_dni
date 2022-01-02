@@ -15,12 +15,12 @@ Write a program that given a DNI number return the NIF letter. The letter in DNI
 
 
 
-| 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  | 21  |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| T   | R   | W   | A   | G   | M   | Y   | F   | P   | D   | X   | B   | N   | J   | Z   | S   | Q   | V   | H   | L   | C   | K   |
+| 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  | 21  | 22 |      
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---|
+| T   | R   | W   | A   | G   | M   | Y   | F   | P   | D   | X   | B   | N   | J   | Z   | S   | Q   | V   | H   | L   | C   | K   | K  |
 
 
 
 
-- **I, Ñ, O and u are no used letter.** 
-- **"I" and "O" letter are not used because of the possibility of generate confusion with other characters como 1, l and .**
+- **'I', 'Ñ', 'O' and 'U' are no used letter.** 
+- **'I' and 'O' letter are not used because of the possibility of generate confusion with other characters as 1, l and .**
