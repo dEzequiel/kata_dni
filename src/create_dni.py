@@ -77,45 +77,38 @@ class DNI:
 
 if __name__ == "__main__":
 
-    import math
     import random
-    import string
 
-    # person = DNI("42375166N")
-    # print("DNI -->", person.get_dni())
-    # person.check_dni()
-    # print("Check status --> ", person.get_healthy_number())
-    # # print("Letter status --> ", person.check_letter())
-    # person2 = DNI("42375188B")  # B
-    # print("DNI -->", person2.get_dni())
-    # print("DNI NUMBER status -->", person2.check_dni())
-    # print("DNI LETTER status --> ", person2.check_letter())
-    # print("CIF STATUS -->", person2.check_cif())
+######################################################################################
+# RANDOM TEST CASES #
 
-casosTest = []
-numeroCasos = 25
+number_cases = 5
+list_cases = []
 
-for i in range(1, numeroCasos + 1):
-    caso = ""
+for i in range(1, number_cases + 1):
+    case = ""  # Innitial dni, as you create your DNI object.
     for j in range(1, 9):
-        # random.randrange(start, stop[, step])
-        # numeroAleatorio = random.randint(0, 9)
-        # ASCII 48-57 = 0-9    65-90 = A-Z   58 = ":"
-        # generamos un numero aleatorio entre 48 y 58
-        caracterAscii = random.randrange(48, 58 + 1, 1)
-        # convertimos el numero ASCII a caracter. chr() toma el argumento como codigo ASCII de un caracter
-        caso = caso + chr(caracterAscii)
-    # en la ultima posicion añado una letra A-Z
-    caso = caso + chr(random.randrange(65, 90 + 1, 1))
-    casosTest = casosTest + [caso]
+        number_sequence = random.randrange(48, 58 + 1, 1)  # returns a number
+        case = case + chr(
+            number_sequence
+        )  # return the last returned number (line 118) into a ASCII char
 
-print(casosTest)
+    case = case + chr(
+        random.randrange(65, 90 + 1, 1)
+    )  # add random letter between A-Z to the final sequence
+    list_cases = list_cases + [case]
 
-for dni in casosTest:
-    objeto = DNI(dni)
-    print(objeto.get_dni())
-    objeto.check_cif()
-    print("dni --->", objeto.get_healthy_number())
-    # print(objeto.calcularLetra())
-    print("Letra --->", objeto.get_healthy_letter())
-    print("La letra es", objeto.get_table_letter())
+print(list_cases)
+
+for dni in list_cases:
+    example = DNI(dni)
+    print("DNI -->", example.get_dni())
+    print("NUMBER STATUS -->", example.check_dni())
+    if example.check_letter():
+        print("LETTER STATUS -->", example.check_letter())
+    else:
+        print("EXPECTED LETTER -->", example.get_table_letter())
+    print("CIF STATUS -->", example.check_cif())
+    print("\n")
+
+######################################################################################
