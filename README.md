@@ -23,3 +23,6 @@ Write a program that given a DNI number return the NIF letter. The letter in DNI
 - **I, Ñ, O y u no son letras usadas.**
 
 - **Las letras "I" y "O" no se utilizan por la posibilidad de generar confusión con otros caracteres como 1, l and 0.**
+
+- **I, Ñ, O and u are no used letter.** 
+- **"I" and "O" letter are not used because of the possibility of generate confusion with other characters como 1, l and .**
