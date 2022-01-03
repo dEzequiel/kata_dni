@@ -1,5 +1,5 @@
 import unittest
-from src.create_dni import DNI
+from create_dni import DNI
 
 # from src.tabla_asignacion import TablaAsignacion
 
