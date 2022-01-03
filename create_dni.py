@@ -10,7 +10,6 @@ class DNI:
         self.healthy_letter = False
         self.table = TablaAsignacion()
 
-    # methods to modify object instance
     def set_dni(self, identity_number):
         self.dni = identity_number
 
@@ -29,7 +28,6 @@ class DNI:
     def get_healthy_letter(self):
         return self.healthy_letter
 
-    # checkers methods
     def check_dni(self):
         self.set_healthy_number(
             self.check_dni_length() and self.check_last_char_is_digit()
@@ -51,7 +49,7 @@ class DNI:
             )
             return self.get_healthy_letter()
         else:
-            return False  # return get_tabble_letter
+            return False  
 
     def get_alphabet_dni(self):
         return self.dni[-1]
@@ -75,40 +73,3 @@ class DNI:
         return self.check_dni() and self.check_letter()
 
 
-# if __name__ == "__main__":
-
-#     import random
-
-# ######################################################################################
-# # RANDOM TEST CASES #
-
-# number_cases = 5
-# list_cases = []
-
-# for i in range(1, number_cases + 1):
-#     case = ""  # Innitial dni, as you create your DNI object.
-#     for j in range(1, 9):
-#         number_sequence = random.randrange(48, 58 + 1, 1)  # returns a number
-#         case = case + chr(
-#             number_sequence
-#         )  # return the last returned number (line 118) into a ASCII char
-
-#     case = case + chr(
-#         random.randrange(65, 90 + 1, 1)
-#     )  # add random letter between A-Z to the final sequence
-#     list_cases = list_cases + [case]
-
-# print(list_cases)
-
-# for dni in list_cases:
-#     example = DNI(dni)
-#     print("DNI -->", example.get_dni())
-#     print("NUMBER STATUS -->", example.check_dni())
-#     if example.check_letter():
-#         print("LETTER STATUS -->", example.check_letter())
-#     else:
-#         print("EXPECTED LETTER -->", example.get_table_letter())
-#     print("CIF STATUS -->", example.check_cif())
-#     print("\n")
-
-# ######################################################################################
