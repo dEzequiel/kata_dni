@@ -1,6 +1,4 @@
-from random import choice, randint, randrange
-from string import ascii_uppercase
-from tabla_asignacion import TablaAsignacion
+from table import Table
 
 
 class DNI:
@@ -8,7 +6,7 @@ class DNI:
         self.dni = identity_numer
         self.healthy_number = False
         self.healthy_letter = False
-        self.table = TablaAsignacion()
+        self.table = Table()
 
     def set_dni(self, identity_number):
         self.dni = identity_number

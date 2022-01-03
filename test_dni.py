@@ -1,8 +1,6 @@
 import unittest
 from create_dni import DNI
 
-# from src.tabla_asignacion import TablaAsignacion
-
 
 class DniClassTesting(unittest.TestCase):
     def test_DNI_object_creation(self):

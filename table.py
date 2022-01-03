@@ -1,4 +1,4 @@
-class TablaAsignacion:
+class Table:
     def __init__(self):
         self.positions = [number for number in range(0, 24)]
         self.letters = [
@@ -44,8 +44,3 @@ class TablaAsignacion:
     def show_tabla(self):
         print(self.table)
 
-
-if __name__ == "__main__":
-
-    tabla = TablaAsignacion()
-    tabla.show_tabla()

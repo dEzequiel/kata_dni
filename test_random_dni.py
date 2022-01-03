@@ -1,4 +1,3 @@
-
 import random
 from create_dni import DNI
 
