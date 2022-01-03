@@ -13,8 +13,6 @@ Write a program that given a DNI number return the NIF letter. The letter in DNI
 * Get the remaining by dividing the ID number by 23
 * The resulting number aims to the position in the follow table:
 
-- **'I', 'Ñ', 'O' and 'U' are no used letter.** 
-- **'I' and 'O' letter are not used because of the possibility of generate confusion with other characters as 1, l and .**
 
 | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  | 21  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
