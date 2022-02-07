@@ -13,25 +13,23 @@ class DNI:
     def set_dni(self, identity_number):
         self.dni = identity_number
 
-    def get_dni(self):
-        return self.dni
-
     def set_healthy_number(self, status):
         self.healthy_number = status
+        
+    def set_healthy_letter(self, status):
+        self.healthy_letter = status
+
+    def get_dni(self):
+        return self.dni
 
     def get_healthy_number(self):
         return self.healthy_number
 
-    def set_healthy_letter(self, status):
-        self.healthy_letter = status
-
     def get_healthy_letter(self):
         return self.healthy_letter
 
-    def check_dni(self):
-        self.set_healthy_number(
-            self.check_dni_length() and self.check_last_char_is_digit()
-        )
+    def check_dni_number(self):
+        self.set_healthy_number(self.check_dni_length() and self.check_last_char_is_digit())
         return self.get_healthy_number()
 
     def check_dni_length(self):
